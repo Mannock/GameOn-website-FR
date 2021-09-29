@@ -40,6 +40,7 @@ closeConfirm.addEventListener("click", () => {
   confirmModal.classList.remove("confirm-message");
 });
 
+//validation submit
 buttonConfirm.addEventListener("click", () => {
   const confirmModal = document.getElementById("confirm-message");
   confirmModal.classList.remove("confirm-message");
@@ -50,9 +51,8 @@ const form = document.querySelector("form");
 const inputs = document.querySelectorAll(
   'input[type="text"], input[type="number"], input[type="date"]'
 );
-// const citiesChecked = document.querySelectorAll(
-//   'div.city-container > input[type="checkbox"]'
-// );
+
+//Check fields
 
 let firstname, lastname, email, quantity, birthdate;
 let cities = [];
@@ -104,8 +104,22 @@ const emailChecker = (value) => {
 };
 
 const birthdateChecker = (value) => {
+  const dateInput = document.getElementById("birthdate").value;
+  const inputDate = new Date(
+    dateInput.split("-")[0],
+    dateInput.split("-")[1] - 1,
+    dateInput.split("-")[2]
+  );
+  let actualDate = new Date();
+
+  console.log(inputDate.getTime());
+  console.log(actualDate.getTime());
+
   if (!value) {
     errorDisplay("birthdate", "Veuillez rentrer une date de naissance!");
+    birthdate = null;
+  } else if (inputDate.getTime() > actualDate.getTime()) {
+    errorDisplay("birthdate", "Vous n'êtes pas né dans le futur!");
     birthdate = null;
   } else {
     errorDisplay("birthdate", "", true);
@@ -163,6 +177,8 @@ inputs.forEach((input) => {
   });
 });
 
+//Submit
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!firstname) {
@@ -190,8 +206,6 @@ form.addEventListener("submit", (e) => {
       "city",
       "Il ne peut pas y avoir plus de villes que de participations!"
     );
-    // } else if (cities.length <= quantity) {
-    //   errorDisplay("city", "", true);
   } else if (!checkbox1.checked) {
     // errorDisplay("cgv", "Veuillez accepter les CGV!");
     document.getElementById("cgv-span").classList.remove("cgv-span");
@@ -203,24 +217,4 @@ form.addEventListener("submit", (e) => {
     modalbg.classList.add("close");
     validationMessage.classList.add("confirm-message");
   }
-
-  // if (firstname && lastname && email && quantity && birthdate) {
-  //   console.log("true");
-  // } else if (!birthdate) {
-  //   errorDisplay("birthdate", "Veuillez rentrer une date de naissance!");
-  // }
 });
-
-// controle sequentiel
-
-// const firstNameChecker = (value) => {
-//   const firstNameContainer = document.querySelector(".firstname-container");
-//   const errorDisplay = document.querySelector(".firstname-container > span");
-//   if (value.length > 0 && value.length <= 2) {
-//     firstNameContainer.classList.add("error");
-//     errorDisplay.textContent = "Le prénom doit contenir plus de 2 caractères";
-//   } else {
-//     firstNameContainer.classList.remove("error");
-//     errorDisplay.textContent = "";
-//   }
-// };
