@@ -14,7 +14,7 @@ body {
   margin: 0px 100px;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
+  /* background-image: url("background.png"); */
   font-family: var(--font-default);
   font-size: 18px;
 }
@@ -655,7 +655,7 @@ footer {
 @keyframes confirmopen {
   from {
     opacity: 0;
-    transform: translateY(180);
+    transform: translateY();
   }
   to {
     opacity: 1;
