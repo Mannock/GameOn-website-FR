@@ -655,7 +655,7 @@ footer {
 @keyframes confirmopen {
   from {
     opacity: 0;
-    transform: translateY();
+    transform: translateY(0px);
   }
   to {
     opacity: 1;
