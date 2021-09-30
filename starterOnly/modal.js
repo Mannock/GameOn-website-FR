@@ -15,9 +15,6 @@ const closeModal = document.querySelector(".close");
 const closeConfirm = document.querySelector("#confirm-message > span");
 const buttonConfirm = document.querySelector(".validation-message > button");
 
-// const confirmation = document.querySelector(".confirm-message");
-// document.querySelector(".confirm-message").style.display = "none";
-
 // launch modal event
 modalBtn.forEach((btn) => {
   btn.addEventListener("click", launchModal);
@@ -35,6 +32,7 @@ closeModal.addEventListener("click", () => {
   modalbg.classList.add("close");
 });
 
+// Close confirmation modal
 closeConfirm.addEventListener("click", () => {
   const confirmModal = document.getElementById("confirm-message");
   confirmModal.classList.remove("confirm-message");
@@ -52,11 +50,10 @@ const inputs = document.querySelectorAll(
   'input[type="text"], input[type="number"], input[type="date"]'
 );
 
-//Check fields
-
 let firstname, lastname, email, quantity, birthdate;
 let cities = [];
 
+// error message template
 const errorDisplay = (tag, message, valid) => {
   const container = document.querySelector("." + tag + "-container");
   const span = document.querySelector("." + tag + "-container > span");
@@ -103,6 +100,7 @@ const emailChecker = (value) => {
   }
 };
 
+//add error if birthdate set in future or if no date selected
 const birthdateChecker = (value) => {
   const dateInput = document.getElementById("birthdate").value;
   const inputDate = new Date(
@@ -152,7 +150,7 @@ addCities.forEach((city) => {
 if (cities.length > quantity) {
   errorDisplay("city", "Ne cochez pas plus de villes que de participations!");
 }
-
+//switch for check
 inputs.forEach((input) => {
   input.addEventListener("input", (e) => {
     switch (e.target.id) {

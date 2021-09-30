@@ -14,7 +14,6 @@ body {
   margin: 0px 100px;
   display: flex;
   flex-direction: column;
-  /* background-image: url("background.png"); */
   font-family: var(--font-default);
   font-size: 18px;
 }
@@ -29,7 +28,6 @@ img {
 }
 
 .topnav {
-  /* overflow: hidden; */
   margin: 60px 0px;
 }
 .header-logo {
@@ -85,6 +83,9 @@ img {
   }
   .hero-content {
     padding: 0;
+  }
+  .main-navbar :first-child {
+    margin-top: 10px;
   }
 }
 
@@ -220,17 +221,6 @@ main {
   padding-top: 10px;
 }
 
-/* .confirm-message {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #000;
-} */
-
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
@@ -257,8 +247,6 @@ input {
   height: 48px;
 }
 
-/* ------------------------- */
-
 span {
   margin-bottom: 20px;
   display: block;
@@ -279,21 +267,6 @@ span {
   color: red;
 }
 
-/* .cgv-span {
-  display: block;
-  margin-bottom: 0px;
-} */
-/* .error {
-  font-size: 0.4em;
-  color: #e54858;
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
-} */
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -312,12 +285,7 @@ span {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -434,7 +402,7 @@ input[data-error]::after {
   background-color: #fff;
 }
 
-/* Style the arrow inside the select element: */
+Style the arrow inside the select element:
 .select-selected:after {
   position: absolute;
   content: "";
@@ -577,12 +545,6 @@ footer {
     text-align: right;
     position: relative;
   }
-
-  /* .topnav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } */
 
   .topnav a.icon {
     float: right;
