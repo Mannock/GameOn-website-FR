@@ -189,18 +189,20 @@ main {
   z-index: 1;
   animation-name: confirmopen;
   animation-duration: var(--modal-duration);
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  height: 100%;
+  transform: translate(-50%, -50%);
+    /* height: 100%; */
+  height:885px;
   width: 100%;
   max-width: 500px;
+  margin-top: 37px;
   background: #232323;
   color: #fff;
   text-align: center;
   font-size: 0.8em;
   padding: 80px;
+
 }
 
 .confirm-message button {
@@ -219,6 +221,10 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+  margin-top: 37px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal-body {
@@ -402,7 +408,7 @@ span {
   background-color: #fff;
 }
 
-Style the arrow inside the select element:
+/* Style the arrow inside the select element: */
 .select-selected:after {
   position: absolute;
   content: "";
@@ -459,7 +465,6 @@ Style the arrow inside the select element:
   font-size: 16px;
 }
 .hero-section {
-  max-height: 700px;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -467,7 +472,7 @@ Style the arrow inside the select element:
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
 }
 .hero-content {
-  padding: 51px 67px;
+  padding: 51px 0px 51px 40px;
   grid-column: span 4;
   background: #232323;
   color: #fff;
@@ -493,7 +498,7 @@ Style the arrow inside the select element:
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
+  width: 100%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
@@ -607,7 +612,7 @@ footer {
 @keyframes modalopen {
   from {
     opacity: 0;
-    transform: translateY(-150px);
+    transform: translateX(-50%);
   }
   to {
     opacity: 1;
@@ -617,7 +622,7 @@ footer {
 @keyframes confirmopen {
   from {
     opacity: 0;
-    transform: translateY(0px);
+    transform: translateX(-50%);
   }
   to {
     opacity: 1;
