@@ -71,6 +71,14 @@ const firstNameChecker = (value) => {
   if (value.length > 0 && value.length <= 2) {
     errorDisplay("firstname", "Le prénom doit contenir plus de 2 caractères");
     firstname = null;
+  } else if (
+    !value.match(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/)
+  ) {
+    errorDisplay(
+      "firstname",
+      "Le prénom ne doit pas contenir de caractères spéciaux"
+    );
+    firstname = null;
   } else {
     errorDisplay("firstname", "", true);
     firstname = value;
@@ -84,6 +92,14 @@ const lastNameChecker = (value) => {
       "Le nom de famille doit contenir plus de 2 caractères"
     );
     lastname = null;
+  } else if (
+    !value.match(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/)
+  ) {
+    errorDisplay(
+      "lastname",
+      "Le nom ne doit pas contenir de caractères spéciaux"
+    );
+    firstname = null;
   } else {
     errorDisplay("lastname", "", true);
     lastname = value;
